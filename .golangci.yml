@@ -1,0 +1,57 @@
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - revive
+    - gofmt
+    - gosec
+    - errcheck
+    - typecheck
+    - staticcheck
+    - unused
+    - gosimple
+    - ineffassign
+    - gci
+
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(gitlab.rentateam.ru/rentadevelopers/qualitycheck/backend)
+
+  revive:
+    rules:
+      - name: blank-imports
+      - name: context-as-argument
+      - name: context-keys-type
+      - name: dot-imports
+      - name: error-return
+      - name: error-strings
+      - name: error-naming
+      - name: exported
+      - name: if-return
+      - name: increment-decrement
+      - name: var-naming
+      - name: var-declaration
+      - name: package-comments
+      - name: range
+      - name: receiver-naming
+      - name: time-naming
+      - name: unexported-return
+      - name: indent-error-flow
+      - name: errorf
+      - name: empty-block
+      - name: superfluous-else
+      - name: unreachable-code
+      - name: redefines-builtin-id
+
+run:
+  modules-download-mode: readonly
+
+issues:
+  exclude-dirs:
+    - vendor
+    - pkg/assets
+    - pkg/migrations
+

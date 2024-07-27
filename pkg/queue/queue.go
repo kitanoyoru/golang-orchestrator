@@ -3,16 +3,16 @@ package queue
 type (
 	Queue struct {
 		start, end *node
-		length int
+		length     int
 	}
 	node struct {
 		value interface{}
-		next *node
+		next  *node
 	}
 )
 
 func New() *Queue {
-	return &Queue{nil,nil,0}
+	return &Queue{nil, nil, 0}
 }
 
 func (this *Queue) Dequeue() interface{} {
@@ -31,10 +31,10 @@ func (this *Queue) Dequeue() interface{} {
 }
 
 func (this *Queue) Enqueue(value interface{}) {
-	n := &node{value,nil}
+	n := &node{value, nil}
 	if this.length == 0 {
 		this.start = n
-		this.end = n		
+		this.end = n
 	} else {
 		this.end.next = n
 		this.end = n
