@@ -1,0 +1,17 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+*.test
+
+*.out
+
+.idea
+vendor
+.DS_Store
+.zed
+
+*.env
+
